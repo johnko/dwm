@@ -2078,7 +2078,7 @@ updatestatus(void) {
 		}
 	}
 	for(m = mons; m; m = m->next)
-		drawbar(selmon);
+		drawbar(m);
 }
 
 void
