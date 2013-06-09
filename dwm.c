@@ -217,6 +217,7 @@ static void resizemouse(const Arg *arg);
 static void restack(Monitor *m);
 static void run(void);
 static void scan(void);
+static void self_restart(const Arg *arg);
 static Bool sendevent(Client *c, Atom proto);
 static void sendmon(Client *c, Monitor *m);
 static void setclientstate(Client *c, long state);
@@ -1343,6 +1344,12 @@ propertynotify(XEvent *e) {
 void
 quit(const Arg *arg) {
 	running = False;
+}
+
+void
+self_restart(const Arg *arg) {
+	char *const p[] = {"/usr/local/bin/dwm", NULL};
+	execv(p[0], p);
 }
 
 Monitor *
