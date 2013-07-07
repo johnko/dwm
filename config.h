@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-#include <X11/XF86keysym.h>
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
@@ -53,7 +52,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "LANG=en_US.UTF-8", "urxvt", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 static const char *lockcmd[]  = { "xsaver-lock", NULL };
 static const char *volmutecmd[]  = { "vol", "mute", NULL };
 static const char *voldowncmd[]  = { "vol", "down", NULL };
@@ -63,9 +62,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ 0,                     XF86XK_AudioMute, spawn,          {.v = volmutecmd } },
-	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
-	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd   } },
+	{ 0,                            XK_F10,    spawn,          {.v = volmutecmd } },
+	{ 0,                            XK_F11,    spawn,          {.v = voldowncmd } },
+	{ 0,                            XK_F12,    spawn,          {.v = volupcmd   } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_b,      togglebottombar,{0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

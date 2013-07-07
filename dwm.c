@@ -2219,6 +2219,7 @@ main(int argc, char *argv[]) {
 		die("usage: dwm [-v]\n");
 	if(!setlocale(LC_CTYPE, "") || !XSupportsLocale())
 		fputs("warning: no locale support\n", stderr);
+	setenv ( "LANG", "en_US.UTF-8", 1 );
 	if(!(dpy = XOpenDisplay(NULL)))
 		die("dwm: cannot open display\n");
 	checkotherwm();
