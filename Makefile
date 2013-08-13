@@ -80,6 +80,7 @@ install: all
 	@install -d -m 0755 ${DESTDIR}${PREFIX}/bin
 	@install -m 0755 dwm ${DESTDIR}${PREFIX}/bin/
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+	@install -d -m 0755 ${DESTDIR}${MANPREFIX}
 	@install -d -m 0755 ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < dwm.1 > dwm.1.s
 	@install -m 0644 dwm.1.s ${DESTDIR}${MANPREFIX}/man1/dwm.1
