@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *lockcmd[]  = { "xsaver-lock", NULL };
-static const char *volmutecmd[]  = { "vol", "mute", NULL };
+static const char *volmutecmd[]  = { "vol", "toggle", NULL };
 static const char *voldowncmd[]  = { "vol", "down", NULL };
 static const char *volupcmd[]  = { "vol", "up", NULL };
 
